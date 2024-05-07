@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en,kh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Casino Store</title>
+</head>
+<body>
+    <header>
+        <h1>Casino Store</h1>
+        <div class="logo">
+            <img src="PNG image 2.png" alt="Logo" class="logo-img">
+            <h2>Dokluy Slots</h2>
+        </div>
+        <div class="tong">
+            <img src="Flag.jpeg" alt="Flag" class="flag-img">
+            <p class="koko">Cambodia</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="fe">
+            <p>1. បញូ្ចល ID Game</p>
+            <input type="number" id="lov" placeholder="Enter ID Game">
+            <button class="merid" type="submit">CHECK ID</button>
+        </div>
+        <div class="ce">
+            <p>2. ជ្រើសរើសចំនួនបន្ទះឈីប</p><br>
+            <div class="cho" onclick="selectDiamond(0.2), showTmDiv()">25,000 Chip</div>
+            <div class="cho" onclick="selectDiamond(0.5), showTmDiv()">60,000 Chip</div>
+            <!-- Add more .cho divs here -->
+        </div>
+        <div class="container">
+            <div class="title">
+                <p>3. បង់<span style="color: #6064b6" > ប្រាក់</span></p>
+            </div>
+            <div class="category">
+                <label for="aba" class="abaMethod">
+                    <div class="imgName">
+                        <div class="imgContainer">
+                            <img src="Abp.png" alt="" style="width: 100px;position: relative;left: 10px;background: #fff; border-radius: 5px; display: inline-block">
+                        </div>
+                        <span class="name" style="position: relative; left: 20px; font-size: 20px">ABA KHQR <br><p style="font-size: 14px; color: gray; margin-top: 10px">Scan to pay with any banking app</p></span>
+                        <div class="calculator">
+                            <span id="Abatotal" style="position: relative; left: -50px">$0.00</span>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="term">
+                <h3 style="margin-top: 20px">Term & Conditions</h3>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeCheckbox">
+                    I agree to the <a href="#" class="terms-link" onclick="openModal()">Terms and Conditions</a>
+                </label>
+                <!-- Your modal code here -->
+            </div>
+            <div id="buyNow">
+                <p>Total: </p>
+                <div class="calculator-2">
+                    <span id="Buytotal">$0.00</span>
+                </div>
+                <div class="col-10 col-md-4 fixed-bottom d-md-none text-center w-100 bg-light border-top">
+                    <button class="btn btn-dark btn-lg my-2 w-75 makeit" disabled="disabled" type="button">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h6>ត្រូវការជំនួយ</h6>
+        <ul>
+            <li><a href="https://www.facebook.com/Elfen1415" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+            <li><a href="https://m.me/Elfen1415" target="_blank"><i class="fab fa-facebook-messenger"></i> Messenger</a></li>
+            <li><a href="https://telegram.me/casinoshopfangroup" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+</body>
+</html>
