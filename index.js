@@ -50,24 +50,9 @@ function closeModal() {
   document.getElementById('termsModal').style.display = 'none';
 }
 
-function makeOrder(link, dataOrder) {
-  $.ajax({
-    type: "POST",
-    url: link,
-    data: dataOrder,
-    beforeSend: function() {
-      $('.markeit').attr('disabled', 'disabled');
-      $(".input").attr('disabled', 'disabled')
-      $(".markeit").html("please Wait....");
-    },
-    success: function() {
-      location.reload();
-    },
-    error: function(xhr, textStatus, error) {
-      toastr.error(xhr.responseJSON.error);
-      setTimeout(() => {
-        location.reload();
-      }, 4000);
-    }
-  });
-}
+const button = document.getElementById('btn');
+
+button.addEventListener('click', () => {
+
+  alert('successfully!');
+});
