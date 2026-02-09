@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kantumruy Pro', sans-serif;
+    background-color: #0f172a;
+    color: white;
+}
+
+.input-field {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+.step-number {
+    background: #2563eb;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.package-card {
+ background: #1e293b;
+border: 2px solid transparent;
+transition: all 0.3s;
+cursor: pointer;
+}
+.package-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.package-card.active {
+    border-color: #3b82f6;
+    background: #1e3a8a;
+}
+
+.payment-card {
+    background: #1e293b;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.payment-card.active {
+    border-color: #e11d48; 
+}
+.btn-check {
+        background: #3b82f6;
+    transition: background 0.3s;
+}
+
+.btn-check:hover {
+    background: #2563eb;
+}
+
+.KHQR{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50PX;
+    backdrop-filter: blur(4px);
+    background-color: #ffffff00;
+    z-index: 1;
+}
+.KHQRcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+}
+@keyframes bottomToTop {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card {
+    width: 100%;
+    height: 550px;
+    background-color: #ffffff;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    border-radius: 28px;
+    position: relative;
+    top: 100px;
+    animation: bottomToTop 1s ease-in-out;
+}
+
+.right{
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #E1232E;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.KHQRheader{
+    height: 12%;
+    background-color: #E1232E;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoKHQR{
+    height: 25%;
+    margin-top: 30px;
+    
+}
+
+.KHQR .name{
+    margin-top: -15px;
+}
+
+.KHQR .name .shop-name{
+    font-size: 12px;
+}
+
+.currency{
+    font-size: 12px;
+}
+
+.amount{
+    font-size: 21px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+
+}
+
+.name .amount, .shop-name{
+    margin-left: 20px;
+}
+
+
+.QRImg{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 8% 10%;
+}
+
+.QRImg .usd{
+    position: fixed;
+
+    
+}
+.off{
+    background-color: #ffff;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    bottom: 48px;
+
+}
+
+.invoice {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.invoice h2 {
+    margin-top: 0;
+    text-align: center;
+    color: green;
+    font-size: 30px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.status{
+    color: #459007;
+    position: relative;
+    left: 200px;
+    font-size: 25px;
+    bottom: 30px;
+}
+.item-value5{
+    margin-top: 30px;
+}
+#responseName{
+    margin-left: 70px;
+}
+.statusthree{
+    position: relative;
+    bottom: 25px;
+    left: 200px;
+    font-size: 25px;
+}
+
+.invoice p{
+    font-size: 25px;
+}
+
+.invoice button {
+    background-color: #06185A;
+    color: white;
+    padding: 1rem;
+    border-radius: 10rem;
+    width: 100%;
+    font-size: 20px;
+    
+}
+.invoice #responseName{
+    position: relative;
+    left: 70px;
+    font-size: 23px;
+    color: rgb(54, 53, 53);
+}
+
+.loader-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.flexqr{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.timer {
+    margin-top: 10px;
+    font-size: 18px;
+}

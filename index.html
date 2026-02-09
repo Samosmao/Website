@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Annoymous SHop</title>
+    <link rel="icon" href="./img/icon.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="pb-10">
+
+    <header class="bg-slate-900 p-4 shadow-lg text-center border-b border-slate-800">
+        <h1 class="text-xl font-bold text-blue-400">💎 MLBB TOP-UP CAMBODIA</h1>
+        <p class="text-xs text-slate-400">Fast, Secure & No Login Required</p>
+    </header>
+
+    <div class="max-w-md mx-auto px-4 mt-6 space-y-6">
+
+        <section class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700">
+            <div class="flex items-center mb-4">
+                <div class="step-number text-sm">1</div>
+                <h2 class="font-bold">បញ្ចូលព័ត៌មានគណនី</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 mb-4">
+                <input type="number" id="game_id" placeholder="User ID" class="input-field" />
+                <input type="number" id="zone_id" placeholder="Zone ID" class="input-field" />
+            </div>
+
+            <button onclick="checkAccount()" class="w-full btn-check py-3 rounded-lg font-bold flex items-center justify-center gap-2" id="submit">
+                <i class="fa-solid fa-magnifying-glass"></i> ពិនិត្យឈ្មោះគណនី
+            </button>
+
+            <div id="account_display" class="hidden mt-3 p-3 bg-blue-900/30 border border-blue-500/50 rounded-lg text-sm text-blue-300">
+                <i class="fa-solid fa-user-check mr-2"></i> ឈ្មោះ: <span id="account_name" class="font-bold">...</span>
+            </div>
+        </section>
+
+        <section class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700">
+            <div class="flex items-center mb-4">
+                <div class="step-number text-sm">2</div>
+                <h2 class="font-bold">ជ្រើសរើសកញ្ចប់</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3" id="package-list">
+                </div>
+        </section>
+
+        <section class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700">
+            <div class="flex items-center mb-4">
+                <div class="step-number text-sm">3</div>
+                <h2 class="font-bold">វិធីសាស្រ្តទូទាត់ប្រាក់</h2>
+            </div>
+
+            <div class="payment-card active p-4 rounded-xl flex items-center justify-between border-2 border-red-500">
+                <div class="flex items-center gap-3">
+                    <img src="/img/bakong.png" alt="Bakong" class="w-10 h-10 rounded-full object-cover">
+                    <div>
+                        <div class="font-bold text-sm">Bakong (KHQR)</div>
+                        <div class="text-xs text-slate-400">ទូទាត់ភ្លាមៗ</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-circle-check text-red-500"></i>
+            </div>
+        </section>
+
+        <div class="pt-4">
+            <button onclick="processPayment()" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-900/20 active:scale-95 transition-transform">
+                ទូទាត់ប្រាក់ឥឡូវនេះ
+            </button>
+            <p class="text-center text-[10px] text-slate-500 mt-3 px-6">
+                ចុចលើប៊ូតុងខាងលើមានន័យថាអ្នកយល់ព្រមតាមលក្ខខណ្ឌនៃការប្រើប្រាស់របស់យើង។
+            </p>
+        </div>
+
+    </div>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-3 rounded-full font-bold shadow-2xl hidden z-50">
+        Message Here
+    </div>
+
+    <div id="confirmModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+        <div class="bg-slate-800 border border-slate-700 w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl scale-95 transition-transform">
+            <div class="bg-blue-600 p-4 text-center">
+                <h3 class="font-bold text-lg text-white">បញ្ជាក់ការបញ្ជាទិញ</h3>
+            </div>
+            
+            <div class="p-6 space-y-4">
+                <div class="flex justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400">ឈ្មោះគណនី:</span>
+                    <span id="modal_acc_name" class="font-bold text-blue-400">---</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400">User ID:</span>
+                    <span id="modal_acc_id" class="font-bold text-white">---</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400">កញ្ចប់:</span>
+                    <span id="modal_package" class="font-bold text-white">---</span>
+                </div>
+                <div class="flex justify-between pt-2">
+                    <span class="text-slate-400 text-lg">តម្លៃសរុប:</span>
+                    <span id="modal_price" class="font-bold text-2xl text-green-400">---</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                    <button onclick="closeConfirmModal()" class="py-3 rounded-xl bg-slate-700 text-white font-bold hover:bg-slate-600">បោះបង់</button>
+                    <button onclick="finalCheckout()" class="py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 shadow-lg shadow-blue-900/40">បន្តទូទាត់</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="showQR"></div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
