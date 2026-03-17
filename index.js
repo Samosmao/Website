@@ -274,7 +274,7 @@ function closeQR() {
   showQR.innerHTML = "";
 }
 
-const apiLink = "http://127.0.0.1/api";
+const apiLink = "https://annoymous-mt7h.onrender.com/api";
 
 const buyNow = () => {
   fetch(apiLink + "/generatekhqr", {
